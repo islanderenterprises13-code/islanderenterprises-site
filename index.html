@@ -425,7 +425,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </label>
       <label class="full">Message<textarea name="msg" placeholder="Property address, dates, questions…"></textarea></label>
       <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <span class="note">This opens your email app with your message filled in.</span>
+        <span class="note" id="leadnote">We reply within one business day.</span>
         <button class="btn btn-primary" type="submit">Send message</button>
       </div>
     </form>
@@ -443,9 +443,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 document.getElementById('yr').textContent=new Date().getFullYear();
 function pick(v){var s=document.getElementById('topic');for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i}}}
 function sendLead(e){
-  e.preventDefault();var f=e.target;
-  var body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nInterest: '+f.topic.value+'\n\n'+f.msg.value;
-  location.href='mailto:admin@islanderenterprises.net?subject='+encodeURIComponent('Website inquiry: '+f.topic.value)+'&body='+encodeURIComponent(body);
+  e.preventDefault();var f=e.target,btn=f.querySelector('button'),note=document.getElementById('leadnote');
+  var data={name:f.name.value,email:f.email.value,phone:f.phone.value,interest:f.topic.value,message:f.msg.value,_subject:'Website inquiry: '+f.topic.value,_template:'table',_captcha:'false'};
+  btn.disabled=true;btn.textContent='Sending…';
+  fetch('https://formsubmit.co/ajax/admin@islanderenterprises.net',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+  .then(function(r){return r.json()}).then(function(j){
+    if(String(j.success)==='true'){f.reset();note.textContent='Thanks! We got your message and will reply within one business day.';note.style.color='#e8774f';btn.textContent='Sent ✓'}
+    else throw 0;
+  }).catch(function(){
+    var body='Name: '+data.name+'\nEmail: '+data.email+'\nPhone: '+data.phone+'\nInterest: '+data.interest+'\n\n'+data.message;
+    location.href='mailto:admin@islanderenterprises.net?subject='+encodeURIComponent(data._subject)+'&body='+encodeURIComponent(body);
+    btn.disabled=false;btn.textContent='Send message';
+  });
   return false;
 }
 document.querySelectorAll('.nav ul a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
