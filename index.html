@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Islander Enterprises — Rental Management & Real Estate | Reno · Charlotte</title>
+<meta name="description" content="Islander Enterprises manages Airbnb, VRBO and long-term rentals, and invests in remodeled homes in Reno, NV and Charlotte, NC.">
+<meta property="og:title" content="Islander Enterprises">
+<meta property="og:description" content="Full-service rental management and remodeled homes in Reno and Charlotte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2a43; --navy-2:#173a5c; --sand:#f5efe6; --sand-2:#ebe2d4;
+  --coral:#e2725b; --coral-d:#c95c46; --ink:#1c2530; --muted:#5b6672; --line:#e3dccf;
+  --radius:18px; --max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fffdf9;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--navy)}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-d);font-weight:600;margin-bottom:12px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:.2s;border:2px solid transparent;cursor:pointer;font-size:1rem}
+.btn-primary{background:var(--coral);color:#fff}
+.btn-primary:hover{background:var(--coral-d)}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--navy-2)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(15,42,67,.96);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Fraunces,serif;font-size:1.25rem;font-weight:700}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--coral),#f2b38a);display:grid;place-items:center;font-size:1rem}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{color:#dfe7ee;text-decoration:none;font-size:.95rem;font-weight:500}
+.nav ul a:hover{color:#fff}
+.nav .btn{padding:10px 20px;font-size:.92rem}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#2b5a85 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,#10324f 60%,#0b2135 100%);color:#fff;padding:110px 0 120px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -60px -10%;height:140px;background:#fffdf9;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero h1{color:#fff;font-size:clamp(2.4rem,5.4vw,4.2rem);max-width:820px}
+.hero h1 em{font-style:normal;color:#f2b38a}
+.hero p.lead{font-size:1.2rem;color:#d3dde6;max-width:640px;margin:22px 0 34px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:44px;margin-top:64px;flex-wrap:wrap}
+.hero-stats div strong{display:block;font-family:Fraunces,serif;font-size:1.9rem;color:#fff}
+.hero-stats div span{color:#aebfce;font-size:.9rem}
+
+/* audience paths */
+.paths{margin-top:-40px;position:relative;z-index:2}
+.path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.path{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-decoration:none;box-shadow:0 10px 30px rgba(15,42,67,.07);transition:.2s}
+.path:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,42,67,.12)}
+.path .ico{font-size:1.6rem}
+.path h3{font-size:1.2rem;margin:10px 0 6px}
+.path p{color:var(--muted);font-size:.93rem}
+.path .go{color:var(--coral-d);font-weight:600;font-size:.9rem;margin-top:12px;display:block}
+
+section{padding:96px 0}
+.section-head{max-width:680px;margin-bottom:48px}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.section-head p{color:var(--muted);margin-top:14px;font-size:1.08rem}
+
+/* owners */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--sand);border-radius:var(--radius);padding:28px}
+.svc h3{font-size:1.15rem;margin:12px 0 8px}
+.svc p{color:var(--muted);font-size:.95rem}
+.svc .ico{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:1.3rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px;counter-reset:s}
+.step{border-top:3px solid var(--coral);padding-top:18px}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:Fraunces,serif;font-size:1.6rem;color:var(--coral-d)}
+.step h4{font-size:1.05rem;margin:6px 0;color:var(--navy)}
+.step p{color:var(--muted);font-size:.92rem}
+
+/* properties */
+.alt{background:var(--sand)}
+.props{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.prop{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.prop-img{height:230px;position:relative;display:flex;align-items:flex-end;padding:22px;color:#fff}
+.prop-img.reno{background:linear-gradient(0deg,rgba(15,42,67,.85),rgba(15,42,67,.1)),linear-gradient(135deg,#7a9cb8,#c8d6e0 55%,#e8c9a7)}
+.prop-img.clt{background:linear-gradient(0deg,rgba(15,42,67,.85),rgba(15,42,67,.1)),linear-gradient(135deg,#9bb59a,#dfe6d3 55%,#e2b48f)}
+.prop-img h3{color:#fff;font-size:1.5rem}
+.prop-img .city{font-size:.85rem;opacity:.85}
+.tag{position:absolute;top:18px;left:18px;background:var(--coral);color:#fff;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:999px}
+.tag.two{left:auto;right:18px;background:#fff;color:var(--navy)}
+.prop-body{padding:26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.specs{display:flex;gap:18px;flex-wrap:wrap;font-weight:600;color:var(--navy);font-size:.95rem}
+.prop-body p{color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--sand);border-radius:999px;padding:5px 12px;font-size:.82rem;color:var(--ink)}
+.price{font-family:Fraunces,serif;font-size:1.5rem;color:var(--navy)}
+.price small{font-family:Inter;font-size:.85rem;color:var(--muted);font-weight:400}
+.prop-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* guests & investors split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{border-radius:var(--radius);padding:44px;position:relative;overflow:hidden}
+.panel.guests{background:linear-gradient(150deg,#fff4ec,#fde3d6)}
+.panel.inv{background:var(--navy);color:#dfe7ee}
+.panel.inv h2,.panel.inv h3{color:#fff}
+.panel h2{font-size:2rem;margin-bottom:14px}
+.panel ul{list-style:none;margin:22px 0 30px;display:grid;gap:12px}
+.panel li{padding-left:28px;position:relative}
+.panel li::before{content:"✓";position:absolute;left:0;color:var(--coral);font-weight:700}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about p{color:var(--muted);margin-bottom:16px}
+.about-card{background:var(--sand);border-radius:var(--radius);padding:34px}
+.about-card dl{display:grid;gap:18px}
+.about-card dt{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--coral-d);font-weight:600}
+.about-card dd{font-family:Fraunces,serif;font-size:1.25rem;color:var(--navy)}
+
+/* contact */
+.contact{background:linear-gradient(160deg,var(--navy),#0b2135);color:#dfe7ee}
+.contact h2{color:#fff}
+.contact .section-head p{color:#b6c6d4}
+.form{background:#fff;border-radius:var(--radius);padding:34px;color:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:600;color:var(--navy)}
+.form input,.form select,.form textarea{font:inherit;font-weight:400;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fffdf9;color:var(--ink)}
+.form textarea{min-height:120px;resize:vertical}
+.form .full{grid-column:1/-1}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.contact-info a{color:#fff}
+.contact-info p{margin-bottom:18px}
+.note{font-size:.82rem;color:var(--muted)}
+
+footer{background:#0b2135;color:#8ea3b6;padding:34px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .path-grid,.steps{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .props,.split,.about,.contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav ul,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.open ul{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--navy);padding:20px 24px;gap:16px}
+  .path-grid,.svc-grid,.steps,.form{grid-template-columns:1fr}
+  section{padding:72px 0}
+  .panel{padding:30px}
+  .hero{padding:80px 0 100px}
+  .hero-stats{gap:28px}
+}
+
+.hero{background:linear-gradient(100deg,rgba(15,42,67,.94) 35%,rgba(15,42,67,.55)),url("https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/f3fc10d2-e130-4fa5-9ee5-748fb329b4ea.jpeg?im_w=1600") center/cover !important}
+.prop-img.reno{background:linear-gradient(0deg,rgba(15,42,67,.85),rgba(15,42,67,0) 60%),url("https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/9d306ea3-b5f5-4abe-8f5e-016060b6c081.jpeg?im_w=1200") center/cover}
+.prop-img.clt{background:linear-gradient(0deg,rgba(15,42,67,.85),rgba(15,42,67,0) 60%),url("https://photos.zillowstatic.com/fp/5c462c379f7c7da9bd80780d494fc3e7-cc_ft_960.jpg") center/cover}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:10px;margin-top:36px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.gallery img.big{grid-column:span 2;grid-row:span 2}
+.rev-stats{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 36px}
+.rev-stats div{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:0 2px 10px rgba(15,42,67,.06)}
+.rev-stats strong{display:block;font-family:Fraunces,serif;font-size:1.7rem;color:#0f2a43}
+.rev-stats span{font-size:.85rem;color:#5b6b7a}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(15,42,67,.06);display:flex;flex-direction:column;gap:14px}
+.review .stars{color:#e8774f;letter-spacing:2px}
+.review p{margin:0;font-size:1rem;line-height:1.55}
+.review cite{font-style:normal;font-size:.85rem;color:#5b6b7a;margin-top:auto}
+.abnb{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+@media(max-width:820px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.reviews{grid-template-columns:1fr}}
+.ba{margin-top:48px}
+.ba h3{font-family:Fraunces,serif;font-size:1.6rem;color:#0f2a43;margin:0 0 6px}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 12px}
+.ba-pair figure,.ba-row figure{margin:0;position:relative}
+.ba-pair img{width:100%;height:340px;object-fit:cover;border-radius:14px}
+.ba-pair figcaption{position:absolute;top:14px;left:14px;background:#0f2a43;color:#fff;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:99px}
+.ba-pair figure:last-child figcaption{background:#e8774f}
+.ba-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ba-row img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+@media(max-width:820px){.ba-pair img{height:220px}.ba-row{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav" id="nav">
+    <a href="#top" class="logo"><span class="logo-mark">🏝</span>Islander Enterprises</a>
+    <ul>
+      <li><a href="#owners">Owners</a></li>
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#stay">Stays</a></li>
+      <li><a href="#invest">Investors</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Get in touch</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#f2b38a">Reno, NV · Charlotte, NC</div>
+    <h1>Rentals run right. <em>Homes done right.</em></h1>
+    <p class="lead">Islander Enterprises manages Airbnb, VRBO and long-term rentals for owners who want higher returns without the headaches, and we remodel and rent homes we're proud to put our name on.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-primary">Get a free rental analysis</a>
+      <a href="#properties" class="btn btn-ghost">See available homes</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>4.8★</strong><span>Across 75 guest reviews</span></div>
+      <div><strong>100%</strong><span>Response rate · under 1 hr</span></div>
+      <div><strong>5 yrs</strong><span>Hosting since 2021</span></div>
+      <div><strong>2 markets</strong><span>Reno · Charlotte</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap paths">
+  <div class="path-grid">
+    <a class="path" href="#owners"><div class="ico">🔑</div><h3>Property owners</h3><p>Hand off the work and keep the upside.</p><span class="go">Management services →</span></a>
+    <a class="path" href="#properties"><div class="ico">🏡</div><h3>Renters</h3><p>Remodeled homes, ready to move in.</p><span class="go">Available homes →</span></a>
+    <a class="path" href="#stay"><div class="ico">🧳</div><h3>Guests</h3><p>Clean, comfortable stays near what matters.</p><span class="go">Book a stay →</span></a>
+    <a class="path" href="#invest"><div class="ico">📈</div><h3>Investors & partners</h3><p>Rehab, flip and buy-and-hold deals.</p><span class="go">Work with us →</span></a>
+  </div>
+</div>
+
+<section id="owners">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">For property owners</div>
+      <h2>Full-service management, from listing to checkout</h2>
+      <p>Whether it's a short-term rental or a long-term lease, we handle the day-to-day so your property earns more and you stay hands-off.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ico">💬</div><h3>24/7 guest & tenant communication</h3><p>Fast replies, check-in coordination, and issue resolution so small problems never turn into bad reviews.</p></div>
+      <div class="svc"><div class="ico">📊</div><h3>Pricing & listing optimization</h3><p>Dynamic pricing, sharp photos and copy, and listings on Airbnb, VRBO, Zillow and Furnished Finder.</p></div>
+      <div class="svc"><div class="ico">🧹</div><h3>Cleaning & maintenance</h3><p>Local cleaners and vendors coordinated between every stay, with restocking and inspections.</p></div>
+      <div class="svc"><div class="ico">🛡️</div><h3>Tenant screening & leasing</h3><p>Credit, background and income checks, leases, rent collection and move-in/move-out handled for you.</p></div>
+      <div class="svc"><div class="ico">🔨</div><h3>Remodel & turn management</h3><p>We've taken homes down to the studs. We'll scope, manage and finish upgrades that raise rents.</p></div>
+      <div class="svc"><div class="ico">📁</div><h3>Owner reporting</h3><p>Clear monthly statements on income, expenses and occupancy, so you always know where you stand.</p></div>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>Free analysis</h4><p>We review your property and estimate what it can earn.</p></div>
+      <div class="step"><h4>Prep & launch</h4><p>Setup, photos, pricing and listings go live.</p></div>
+      <div class="step"><h4>We run it</h4><p>Guests, tenants, cleaning, maintenance, all handled.</p></div>
+      <div class="step"><h4>You get paid</h4><p>Monthly payouts and reporting.</p></div>
+    </div>
+    <div style="margin-top:44px"><a href="#contact" class="btn btn-dark">Get my free rental analysis</a></div>
+  </div>
+</section>
+
+<section id="properties" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Available homes</div>
+      <h2>Fully remodeled. Ready now.</h2>
+      <p>Every home we offer has been renovated top to bottom. Here's what's available right now.</p>
+    </div>
+    <div class="props">
+      <article class="prop">
+        <div class="prop-img reno"><span class="tag">For rent · Dec 2</span><div><div class="city">Reno, NV · Near UNR</div><h3>Ralston Street Home</h3></div></div>
+        <div class="prop-body">
+          <div class="specs"><span>2 bed</span><span>1 bath</span><span>Furnished or unfurnished</span></div>
+          <p>Fully remodeled home on a quiet street, a short walk to UNR and minutes from Midtown, downtown Reno and the Truckee River. New roof, windows, flooring, central heat and A/C, and tankless water heaters.</p>
+          <div class="chips"><span>In-unit washer/dryer</span><span>Stainless appliances</span><span>Marble-tile shower</span><span>Covered porch + back deck</span><span>Yard maintained</span><span>No pets</span></div>
+          <div class="prop-foot"><div class="price">$2,300<small> /month · $2,300 deposit</small></div><a href="#contact" class="btn btn-dark" onclick="pick('Renting: Ralston St, Reno')">Schedule a tour</a></div>
+        </div>
+      </article>
+      <article class="prop">
+        <div class="prop-img clt"><span class="tag">For sale · $398,000</span><span class="tag two">Rent-to-own option</span><div><div class="city">Charlotte, NC</div><h3>Glory Street Home</h3></div></div>
+        <div class="prop-body">
+          <div class="specs"><span>3 bed</span><span>2 bath</span><span>1,477 sq ft</span></div>
+          <p>Now on the market. Remodeled down to the studs in 2025. An all-electric home with hardwood floors, central heat and air, a fenced back yard and driveway parking.</p>
+          <div class="chips"><span>Washer/dryer</span><span>Dishwasher</span><span>Hardwood floors</span><span>Fenced yard</span><span>Driveway parking</span><span>No pets</span></div>
+          <div class="prop-foot"><div class="price">$398,000<small> · <a href="https://www.zillow.com/homedetails/4118-Glory-St-Charlotte-NC-28206/6189392_zpid/" target="_blank" rel="noopener">Full listing + photos on Zillow →</a></small></div><a href="#contact" class="btn btn-dark" onclick="pick('Buying: Glory St, Charlotte')">Inquire</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="ba">
+      <h3>Glory Street: before &amp; after</h3>
+      <p>Taken down to the studs in 2025 and rebuilt: new floors, kitchen, baths and finishes throughout.</p>
+      <div class="ba-pair">
+        <figure><img loading="lazy" src="glory-before.jpg" alt="Living room before remodel"><figcaption>Before</figcaption></figure>
+        <figure><img loading="lazy" src="https://photos.zillowstatic.com/fp/1c41b0db8f5213e055e7204561dac433-cc_ft_960.jpg" alt="Living room after remodel"><figcaption>After</figcaption></figure>
+      </div>
+      <div class="ba-row"><figure><img loading="lazy" src="https://photos.zillowstatic.com/fp/60721ca3ac52acd8f32bbf074586062d-cc_ft_960.jpg" alt="Kitchen"></figure><figure><img loading="lazy" src="https://photos.zillowstatic.com/fp/1ec64536a59d2f27b4bcd560f1586d42-cc_ft_960.jpg" alt="Bathroom"></figure><figure><img loading="lazy" src="https://photos.zillowstatic.com/fp/d114094a04dd1f44ff71cb3afad8acc7-cc_ft_960.jpg" alt="Bedroom"></figure><figure><img loading="lazy" src="https://photos.zillowstatic.com/fp/3309d4a3de84d7d251c6508fc4b295c4-cc_ft_960.jpg" alt="Back yard"></figure></div>
+    </div>
+  </div>
+</section>
+
+<section id="stay">
+  <div class="wrap split">
+    <div class="panel guests">
+      <div class="eyebrow">For guests</div>
+      <h2>Stay somewhere that feels like home</h2>
+      <p>Our short-term stays are remodeled, spotless and stocked, with fast communication from check-in to checkout.</p>
+      <ul>
+        <li>Professionally cleaned and inspected before every stay</li>
+        <li>Self check-in and a real person on call 24/7</li>
+        <li>Great locations near campus, downtown and the slopes</li>
+        <li>Monthly and extended stays welcome</li>
+      </ul>
+      <div class="abnb">
+        <a href="https://www.airbnb.com/rooms/1140065983439362179" target="_blank" rel="noopener" class="btn btn-primary">Book the Cozy Retreat · 4.86★</a>
+        <a href="https://www.airbnb.com/rooms/1140099909864412892" target="_blank" rel="noopener" class="btn btn-ghost">Book the Modern Comfort · 4.75★</a>
+      </div>
+      <p style="font-size:.9rem;opacity:.8;margin-top:14px">Traveling with a group? Book both units together for up to 10 guests.</p>
+    </div>
+    <div class="panel inv" id="invest">
+      <div class="eyebrow" style="color:#f2b38a">For investors & partners</div>
+      <h2>Let's build the next one together</h2>
+      <p>We buy, remodel and operate residential property, and we've closed deals with rehab, fix-and-flip, DSCR and conventional financing.</p>
+      <ul>
+        <li>Acquisition, rehab scoping and project management</li>
+        <li>Turnkey operation after the remodel, short- or long-term</li>
+        <li>Experience in Nevada and North Carolina markets</li>
+        <li>Straightforward communication and clear numbers</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" onclick="pick('Investing / partnership')">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Real guests, real reviews</div>
+      <h2>Don't take our word for it</h2>
+      <p>Straight from our Airbnb listings in Reno, a few blocks from UNR.</p>
+    </div>
+    <div class="rev-stats">
+      <div><strong>4.79★</strong><span>Host rating · 75 reviews</span></div>
+      <div><strong>5.0</strong><span>Cleanliness · Cozy Retreat</span></div>
+      <div><strong>5.0</strong><span>Communication · both homes</span></div>
+      <div><strong>&lt; 1 hr</strong><span>Typical response time</span></div>
+    </div>
+    <div class="reviews">
+      <div class="review"><div class="stars">★★★★★</div><p>“We had an overall great stay! The place was clean, comfortable, and exactly as described. Ruben was extremely quick with his responses.”</p><cite>Viviana · Orange, CA · Airbnb guest</cite></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Perfect place to stay for dorm move in because it was an easy walk to the dorms and campus. Quiet location too.”</p><cite>Stefanie · Las Vegas, NV · Airbnb guest</cite></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Very cute! Photos do no justice, everything looked nicer in person.”</p><cite>Barret · Airbnb guest</cite></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Very nice and comfortable house. Ruben is very good at answering all of our questions and concerns.”</p><cite>Margarita · San Jose, CA · Airbnb guest</cite></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“The place was clean and cozy. The beds were very comfortable and clean, and it's very close to UNR.”</p><cite>Jovinne · Las Vegas, NV · Airbnb guest</cite></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Our stay was comfortable and clean. We would definitely want to stay here again.”</p><cite>Lupe · Airbnb guest</cite></div>
+    </div>
+    <div class="gallery">
+      <img loading="lazy" class="big" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/f3fc10d2-e130-4fa5-9ee5-748fb329b4ea.jpeg?im_w=1200" alt="Front house exterior">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA5OTkwOTg2NDQxMjg5Mg%3D%3D/original/5881cced-3ecd-43aa-8138-7c8fa51c10d8.jpeg?im_w=800" alt="Back deck">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/fe4b2397-c3d2-4bf2-8d52-102fdc296f9f.jpeg?im_w=800" alt="Remodeled kitchen">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA5OTkwOTg2NDQxMjg5Mg%3D%3D/original/88f19fa3-86fb-44df-b971-088645b7fcbf.jpeg?im_w=800" alt="Living room">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/6cdf0930-2607-4c7a-ad88-54c3afdaf823.jpeg?im_w=800" alt="Bedroom">
+      <img loading="lazy" class="big" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA5OTkwOTg2NDQxMjg5Mg%3D%3D/original/f94bf6a7-ebec-404d-a454-d0cb8c0a0494.jpeg?im_w=1200" alt="Tiled shower">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/c9df75fb-cd33-4512-8a64-250c9819f373.jpeg?im_w=800" alt="Open living and kitchen">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA5OTkwOTg2NDQxMjg5Mg%3D%3D/original/6d60318f-ba84-45ef-a9e7-673a0a548856.jpeg?im_w=800" alt="Bedroom">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA2NTk4MzQzOTM2MjE3OQ%3D%3D/original/1dcf5eff-843b-46e4-8895-a42fb7d7e2e2.jpeg?im_w=800" alt="Laundry">
+      <img loading="lazy" class="" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MDA5OTkwOTg2NDQxMjg5Mg%3D%3D/original/0ab6d509-0c1f-4c6e-ad1f-6201e4f4353f.jpeg?im_w=800" alt="Kitchen">
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="eyebrow">About us</div>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:20px">A family business that treats every home like our own</h2>
+      <p>Islander Enterprises, LLC was founded in 2021 by the Rivera family. We started by hosting our own properties on Airbnb and VRBO, then grew into full remodels, long-term rentals and managing homes for other owners.</p>
+      <p>We're hands-on. We've pulled permits, managed contractors, screened tenants and answered guest messages at midnight, and that's exactly the care we bring to every property we touch.</p>
+    </div>
+    <div class="about-card">
+      <dl>
+        <div><dt>Founded</dt><dd>2021</dd></div>
+        <div><dt>Markets</dt><dd>Reno, NV · Charlotte, NC</dd></div>
+        <div><dt>What we do</dt><dd>Short-term & long-term management, remodels, acquisitions</dd></div>
+        <div><dt>Contact</dt><dd><a href="mailto:admin@islanderenterprises.net">admin@islanderenterprises.net</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <div class="section-head" style="margin-bottom:28px">
+        <div class="eyebrow" style="color:#f2b38a">Get in touch</div>
+        <h2>Tell us what you're looking for</h2>
+        <p>Owner, renter, guest or investor, send a note and we'll get back to you within one business day.</p>
+      </div>
+      <p><strong style="color:#fff">Email</strong><br><a href="mailto:admin@islanderenterprises.net">admin@islanderenterprises.net</a></p>
+      <p><strong style="color:#fff">Markets</strong><br>Reno, NV · Charlotte, NC</p>
+    </div>
+    <form class="form" id="lead" onsubmit="return sendLead(event)">
+      <label>Name<input name="name" required></label>
+      <label>Email<input name="email" type="email" required></label>
+      <label>Phone<input name="phone" type="tel"></label>
+      <label>I'm interested in
+        <select name="topic" id="topic">
+          <option>Management for my property</option>
+          <option>Renting: Ralston St, Reno</option>
+          <option>Buying: Glory St, Charlotte</option>
+          <option>Booking a stay</option>
+          <option>Investing / partnership</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label class="full">Message<textarea name="msg" placeholder="Property address, dates, questions…"></textarea></label>
+      <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="note">This opens your email app with your message filled in.</span>
+        <button class="btn btn-primary" type="submit">Send message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Islander Enterprises, LLC</span>
+    <span>Reno, NV · Charlotte, NC · <a href="mailto:admin@islanderenterprises.net">admin@islanderenterprises.net</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+function pick(v){var s=document.getElementById('topic');for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i}}}
+function sendLead(e){
+  e.preventDefault();var f=e.target;
+  var body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nInterest: '+f.topic.value+'\n\n'+f.msg.value;
+  location.href='mailto:admin@islanderenterprises.net?subject='+encodeURIComponent('Website inquiry: '+f.topic.value)+'&body='+encodeURIComponent(body);
+  return false;
+}
+document.querySelectorAll('.nav ul a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
+</script>
+</body>
+</html>
